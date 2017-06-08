@@ -47,6 +47,10 @@ public void onCreate(Bundle savedInstanceState){
     switchCity= (Button) findViewById(R.id.switch_city);
     refreshWeather= (Button) findViewById(R.id.refresh_weather);
     String countyCode=getIntent().getStringExtra("county_code");
+    switchCity= (Button) findViewById(R.id.switch_city);
+    refreshWeather= (Button) findViewById(R.id.refresh_weather);
+    switchCity.setOnClickListener(this);
+    refreshWeather.setOnClickListener(this);
     if(!TextUtils.isEmpty(countyCode)){
         publishText.setText("同步中...");
         weatherInfoLayout.setVisibility(View.INVISIBLE);
@@ -54,8 +58,6 @@ public void onCreate(Bundle savedInstanceState){
     }else{
         showWeather();
     }
-    switchCity.setOnClickListener(this);
-    refreshWeather.setOnClickListener(this);
 
 }
 
